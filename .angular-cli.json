@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "jwt-auth-demo"
+    "name": "task-manager-app"
   },
   "apps": [
     {
@@ -10,7 +10,16 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "facebook-auth.html"
+        {
+          "glob": "index.js",
+          "input": "./server/",
+          "output": "./"
+        },
+        {
+          "glob": "package.json",
+          "input": "./server/",
+          "output": "./"
+        }
       ],
       "index": "index.html",
       "main": "main.ts",
