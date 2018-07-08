@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+// body {
+
+// }
+  
+// /*
+//  * Typography
+//  */
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body { 
+    font-family: Roboto, Arial, sans-serif;
+    padding-top: 5.5rem;
+    background: #f8f8f8;
+}
+
+.basic-container {
+    padding-bottom: 70px;
+}

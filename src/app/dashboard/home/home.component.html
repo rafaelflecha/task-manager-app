@@ -1,0 +1,27 @@
+<mat-card *ngIf="tasks?.length == 0" class="custom-card">
+  <p>Sem tarefas :)</p>
+</mat-card>
+
+<mat-card *ngFor="let task of tasks" class="custom-card">
+  <mat-toolbar-row>
+    <mat-slide-toggle class="" (change)="toggleIsComplete($event, task)" color="primary" [checked]="task.isCompleted" [disabled]="disabled">
+    </mat-slide-toggle>
+    <span>
+      <strong>{{task.id}}:</strong> {{ task.title }}</span>
+    <span class="example-spacer"></span>
+    <button class="home-buttons" mat-mini-fab color="warn" (click)="openConfirmationDialog(task.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button class="home-buttons" mat-mini-fab color="primary" (click)="openTaskToEditDialog(task)">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-raised-button color="accent" class="home-buttons" (click)="openTaskDetailsDialog(task)">Detalhes</button>
+  </mat-toolbar-row>
+  <mat-card-content>
+    {{ task.description }}
+  </mat-card-content>
+</mat-card>
+
+
+
+<button class="add-button" mat-raised-button (click)="openTaskDialog()" color="primary">Adicionar</button>

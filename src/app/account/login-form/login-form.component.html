@@ -1,0 +1,30 @@
+<div>
+    <div>
+        <h2>Login</h2>
+    </div>
+</div>
+
+<div>
+    <form #f="ngForm" novalidate (ngSubmit)="login(f)">
+        <div class="login-custom-form">
+            <mat-form-field>
+                <input matInput placeholder="E-mail" id="email" type="text" required name="email" [ngModel]="credentials.email"
+                    #email="ngModel" tmFocus validateEmail>
+                <mat-error [hidden]="email.valid || (email.pristine && !submitted)" class="text-danger">Insira um endereço de e-mail válido.</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Senha" [type]="hide ? 'password' : 'text'" id="password" required name="password"
+                    ngModel>
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit" [disabled]="f.invalid || isRequesting">Entrar</button>
+            <app-spinner [isRunning]="isRequesting"></app-spinner>
+<!-- 
+            <div *ngIf="errors" class="alert alert-danger" role="alert">
+                <strong>Oops!</strong> {{errors}}
+            </div> -->
+        </div>
+    </form>
+</div>

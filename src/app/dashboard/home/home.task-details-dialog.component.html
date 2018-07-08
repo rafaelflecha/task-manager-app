@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Detalhes da tarefa</h1>
+<div mat-dialog-content>
+    <mat-list role="list">
+        <mat-list-item role="listitem"><strong>Titulo:</strong> {{data.title}}</mat-list-item>
+        <mat-list-item *ngIf="data?.description" role="listitem"><strong>Descrição:</strong> {{data.description}}</mat-list-item>
+        <mat-list-item  role="listitem"><strong>Criado em:</strong> {{data.createdAt | date:"MM/dd/yyyy 'às' HH:mm"}}</mat-list-item>
+        <mat-list-item *ngIf="data?.updatedAt" role="listitem"><strong>Atualiado em:</strong> {{data.updatedAt | date:"MM/dd/yyyy 'às' HH:mm"}}</mat-list-item>
+        <mat-list-item *ngIf="data?.completedAt" role="listitem"><strong>Concluído em:</strong> {{data.completedAt | date:"MM/dd/yyyy 'às' HH:mm"}}</mat-list-item>
+        <mat-list-item role="listitem"><strong>Status:</strong> {{data.isCompleted ? "Concluído" : "Não concluído"}} </mat-list-item>
+    </mat-list>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="onNoClick()">Fechar</button>
+</div>
