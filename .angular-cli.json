@@ -6,20 +6,16 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "dist",
+      "outDir": "dist/publicweb",
       "assets": [
         "assets",
         "favicon.ico",
         {
-          "glob": "index.js",
-          "input": "./server/",
-          "output": "./"
+          "glob": "**/*.*",
+          "input": "../server/",
+          "output": "../"
         },
-        {
-          "glob": "package.json",
-          "input": "./server/",
-          "output": "./"
-        }
+        "manifest.json"
       ],
       "index": "index.html",
       "main": "main.ts",
