@@ -8,5 +8,8 @@ export interface Task {
     removedAt: Date;
     completedAt: Date;
     isCompleted: boolean;
+    
+    action: string;
+    taskId: number;
   }
   

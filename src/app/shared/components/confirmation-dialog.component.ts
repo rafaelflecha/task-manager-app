@@ -1,8 +1,9 @@
 import {Component, Inject} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
-export interface ConfirmatioData {
-
+export interface ConfirmationData {
+    action: string;
+    description: string;
 }
 
 @Component({
@@ -13,7 +14,7 @@ export interface ConfirmatioData {
   
     constructor(
       public dialogRef: MatDialogRef<ConfirmationDialog>,
-      @Inject(MAT_DIALOG_DATA) public data: ConfirmatioData) {}
+      @Inject(MAT_DIALOG_DATA) public data: ConfirmationData) {}
   
     onNoClick(): void {
       this.dialogRef.close();
